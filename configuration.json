@@ -1,0 +1,6 @@
+{
+  "serial_port": "/dev/ttyACM0",
+  "host": "localhost",
+  "port": 1883,
+  "module_name": "Z-Wave Module"
+}
