@@ -1,0 +1,2 @@
+wolk-gateway-module
+pyserial
