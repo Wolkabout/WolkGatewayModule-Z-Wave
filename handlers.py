@@ -10,7 +10,7 @@ def node_status_provider(device_key):
     """Ping network node to get current state."""
     nodes = zwave.controller.nodes.copy()
     nodes.remove(zwave.controller.GetNodeId())
-    if device_key == "dimmer":
+    if device_key == "smart_dimmer6":
         node_number = 2
         zwave.translator.Ping(node_number, 5, False, "status_request")
         time.sleep(1.5)
@@ -27,7 +27,7 @@ def handle_actuation(device_key, reference, value):
     """
     Set device actuator identified by reference to value.
     """
-    if device_key == "dimmer":
+    if device_key == "smart_dimmer6":
         if reference == "D":
             node_number = 2
             node = zwave.nodeset.GetNode(node_number)
@@ -40,7 +40,7 @@ def get_actuator_status(device_key, reference):
     """
     Get current actuator status identified by device key and reference.
     """
-    if device_key == "dimmer":
+    if device_key == "smart_dimmer6":
         if reference == "D":
             node_number = 2
             node = zwave.nodeset.GetNode(node_number)

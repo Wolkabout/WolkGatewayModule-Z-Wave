@@ -31,7 +31,7 @@ wolk_module.add_device(devices.smart_dimmer_device)
 wolk_module.connect()
 wolk_module.publish()
 
-time.sleep(5)
+time.sleep(5)  # Allow connect method to ping nodes for their status
 
 try:
     while True:
@@ -46,26 +46,38 @@ try:
         node = zwave.nodeset.GetNode(node_number)
 
         if not node.IsInterviewed():
-            wolk_module.publish_device_status("dimmer")
+            wolk_module.publish_device_status("smart_dimmer6")
             continue
 
         for value in node.values.Meters():
 
             if value[2] == "kWh":
                 wolk_module.add_sensor_reading(
-                    "dimmer", "EC", value[3], int(round(time.time() * 1000))
+                    "smart_dimmer6",
+                    "EC",
+                    value[3],
+                    int(round(time.time() * 1000)),
                 )
             elif value[2] == "W":
                 wolk_module.add_sensor_reading(
-                    "dimmer", "P", value[3], int(round(time.time() * 1000))
+                    "smart_dimmer6",
+                    "P",
+                    value[3],
+                    int(round(time.time() * 1000)),
                 )
             elif value[2] == "V":
                 wolk_module.add_sensor_reading(
-                    "dimmer", "V", value[3], int(round(time.time() * 1000))
+                    "smart_dimmer6",
+                    "V",
+                    value[3],
+                    int(round(time.time() * 1000)),
                 )
             elif value[2] == "A":
                 wolk_module.add_sensor_reading(
-                    "dimmer", "I", value[3], int(round(time.time() * 1000))
+                    "smart_dimmer6",
+                    "I",
+                    value[3],
+                    int(round(time.time() * 1000)),
                 )
 
         wolk_module.publish()
