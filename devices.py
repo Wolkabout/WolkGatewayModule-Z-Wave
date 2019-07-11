@@ -69,7 +69,7 @@ LED_dimmer_template = wolk.ActuatorTemplate(
 
 LED_bulb_template = wolk.DeviceTemplate(actuators=[LED_dimmer_template])
 
-LED_bulb_device = wolk.Device("LED Bulb", "LED_Bulb6", LED_dimmer_template)
+LED_bulb_device = wolk.Device("LED Bulb", "LED_Bulb6", LED_bulb_template)
 
 
 # Aeotec Multi Sensor 6
