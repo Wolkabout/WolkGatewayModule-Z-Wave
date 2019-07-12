@@ -33,6 +33,8 @@ wolk_module.publish()
 
 time.sleep(5)  # Allow connect method to ping nodes for their status
 
+wolk_module.publish_acutator_status("smart_dimmer6", "D")
+
 try:
     while True:
         for n in zwave.controller.nodes:
@@ -46,7 +48,9 @@ try:
         node = zwave.nodeset.GetNode(node_number)
 
         if not node.IsInterviewed():
-            wolk_module.publish_device_status("smart_dimmer6")
+            wolk_module.publish_device_status(
+                "smart_dimmer6", wolk.DeviceStatus.OFFLINE
+            )
             continue
 
         for value in node.values.Meters():

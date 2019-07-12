@@ -31,5 +31,5 @@ and setup the `host` and `port` to refer to the WolkGateway's MQTT broker.
 }
 ```
 
-Managing the communication with Z-Wave nodes can be seen in `dimmer_demo.py` that uses [Aeotec Z-Stick](https://aeotec.com/z-wave-usb-stick) controller and [Aeotec Smart Dimmer 6](https://aeotec.com/z-wave-plug-in-dimmer).
+Managing the communication with Z-Wave nodes can be seen in `demo.py` that uses [Aeotec Z-Stick](https://aeotec.com/z-wave-usb-stick) controller and [Aeotec Smart Dimmer 6](https://aeotec.com/z-wave-plug-in-dimmer).
 The example gets the current energy consumption periodically from the smart plug and accepts commands from WolkAbout IoT Platform to change the current value of the dimmer.
